@@ -15,7 +15,7 @@ export class ApiController {
     description: 'A list of songs matching the search criteria',
     type: [SongResponseDto],
   })
-  async popularSongs(@Query() dto: SearchDto): Promise<ISongAnalytics[]> {
+  async popularSongs(@Query() dto: SearchDto): Promise<SongResponseDto[]> {
     return this.apiService.getSongs(dto)
   }
 }

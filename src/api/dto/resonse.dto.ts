@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
+import { PlayCount } from '../../indexer/types'
 
 export class SongResponseDto {
   @ApiProperty({ description: 'Unique identifier of the song', example: '1' })
@@ -24,9 +25,9 @@ export class SongResponseDto {
 
   @ApiProperty({
     description: 'Play counts of the song by month',
-    example: { '2024-07': 2000 },
+    example: [{ month: '2024-07', plays: 2000 }],
   })
-  playCounts!: Record<string, number>
+  playCounts!: PlayCount[]
 
   @ApiProperty({
     description: 'Total number of plays in the last year',

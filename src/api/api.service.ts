@@ -4,6 +4,7 @@ import { indexName } from '../indexer/indexer.fn'
 import { ISongAnalytics } from '../indexer/types'
 import { buildEsQuery } from './query.fn'
 import { SearchDto } from './dto/search.dto'
+import { SongResponseDto } from './dto/resonse.dto'
 
 @Injectable()
 export class ApiService {
@@ -29,7 +30,7 @@ export class ApiService {
     )
   }
 
-  async getSongs(dto: SearchDto): Promise<ISongAnalytics[]> {
+  async getSongs(dto: SearchDto): Promise<SongResponseDto[]> {
     try {
       const searchResponse = await this.elasticsearch.search({
         index: this.indexName,
@@ -52,7 +53,7 @@ export class ApiService {
           totalCount,
         } = hit._source as ISongAnalytics
         return {
-          _id: hit._id!,
+          id: hit._id!,
           song,
           artists,
           writers,
