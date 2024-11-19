@@ -1,0 +1,4 @@
+node_modules
+dist
+.docker-compose/
+pnpm-lock.yaml

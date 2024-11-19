@@ -11,3 +11,7 @@ yarn-error.log*
 .vscode/*
 /dist
 .idea/*
+.docker-compose
+.env
+.env.production
+coverage
