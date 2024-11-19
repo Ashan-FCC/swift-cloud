@@ -10,7 +10,6 @@ export class ApiController {
   constructor(private readonly apiService: ApiService) {}
 
   @Get('/songs')
-  @ApiQuery({ type: SearchDto })
   @ApiResponse({
     status: 200,
     description: 'A list of songs matching the search criteria',
