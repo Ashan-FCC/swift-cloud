@@ -9,8 +9,9 @@
     "api": "ts-node-dev ./src/server",
     "start": "node ./dist/server.js",
     "prettier-format": "pnpm prettier --write .",
+    "test": "pnpm test:unit && pnpm test:integration",
     "test:unit": "jest --coverage --testMatch '**/*.test.ts' --passWithNoTests",
-    "test:integation": "./test.sh",
+    "test:integration": "./test.sh",
     "itest": "NODE_ENV=test jest --coverage --testMatch '**/*.spec.ts' --passWithNoTests"
   },
   "devDependencies": {
