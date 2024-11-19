@@ -7,6 +7,7 @@
     "build": "tsc",
     "index": "ts-node ./src/cli.ts",
     "api": "ts-node-dev ./src/server",
+    "start": "node ./dist/server.js",
     "prettier-format": "pnpm prettier --write .",
     "test:unit": "jest --coverage --testMatch '**/*.test.ts' --passWithNoTests",
     "test:integation": "./test.sh",
