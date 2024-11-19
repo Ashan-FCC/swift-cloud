@@ -37,9 +37,35 @@ export class ApiService {
         size: 200,
       })
 
-      return searchResponse.hits.hits.map(
-        (hit) => hit._source as ISongAnalytics
-      )
+      return searchResponse.hits.hits.map((hit) => {
+        const {
+          song,
+          artists,
+          album,
+          version,
+          writers,
+          releaseYear,
+          playCounts,
+          lastYearsCount,
+          last3MonthsCount,
+          lastMonthsCount,
+          totalCount,
+        } = hit._source as ISongAnalytics
+        return {
+          _id: hit._id!,
+          song,
+          artists,
+          writers,
+          album,
+          version,
+          releaseYear,
+          playCounts,
+          lastYearsCount,
+          last3MonthsCount,
+          lastMonthsCount,
+          totalCount,
+        }
+      })
     } catch (e) {
       return []
     }
