@@ -54,7 +54,7 @@ function setupSwagger(app: INestApplication): void {
       .setTitle('SwiftCloud API')
       .setVersion('1.0.0')
       .addBearerAuth()
-      .addServer(`http://localhost:${process.env.SERVICE_PORT}`)
+      .addServer(`http://https://swift-cloud-799ab6467e8a.herokuapp.com`)
       .build()
 
   const document: OpenAPIObject = SwaggerModule.createDocument(app, options)
