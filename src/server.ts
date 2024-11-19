@@ -34,7 +34,7 @@ export async function start(): Promise<INestApplication> {
   app.useGlobalPipes(new ValidationPipe({ transform: true }))
 
   setupSwagger(app)
-  const port = Number(process.env.SERVICE_PORT || 3100)
+  const port = Number(process.env.PORT || 3100)
 
   await app.listen(port)
 
@@ -54,7 +54,7 @@ function setupSwagger(app: INestApplication): void {
       .setTitle('SwiftCloud API')
       .setVersion('1.0.0')
       .addBearerAuth()
-      .addServer(`http://https://swift-cloud-799ab6467e8a.herokuapp.com`)
+      .addServer(`https://swift-cloud-799ab6467e8a.herokuapp.com`)
       .build()
 
   const document: OpenAPIObject = SwaggerModule.createDocument(app, options)

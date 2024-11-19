@@ -8,7 +8,7 @@ describe('Songs API Integration Tests', () => {
   dotenv.config({ path: '.env.itest' })
 
   let app: INestApplication
-  const port = Number(process.env.SERVICE_PORT!)
+  const port = Number(process.env.PORT!)
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [ApiModule],
