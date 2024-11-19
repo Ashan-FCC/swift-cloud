@@ -1,4 +1,12 @@
 ### swift-cloud
+ An Api to search for Taylor Swift songs to spot trends and quirks
+
+Deployed to Heroku
+
+Find the docs at
+https://swift-cloud-799ab6467e8a.herokuapp.com/docs
+
+For local development. Go to 
 
 ### Local Development
 
@@ -8,15 +16,14 @@
 5. Run elasticsearch via docker using `docker-compose up -d elasticsearch`
 6. Run the data indexer using `pnpm run index`
 7. Run the api using `pnpm run api`
-8. To run unit tests `pnpm test:unit`
-8. To run integration tests `pnpm test:unit`
+8. To run tests `pnpm run test`
 
 The project will work out of the box with `.env.base` file, but if you wish to override any envrionment variables, create a new file `.env`
 Any values specified in the `.env` file will override the values in `.env.base`
 
 ### Docs
 
-Docs will be hosted at `http://localhost:3000/docs` after running the api
+Docs will be hosted at `http://localhost:{port}/docs` after running the api
 
 ### Running tests
 
