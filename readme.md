@@ -29,4 +29,4 @@ The elasticsearch instance will be destroyed after the tests are run.
 
 1. Save the source data in S3 and stream this data when running data indexer
 2. Separate data for integration tests. Currently the integration tests use the same data as the api
-
+3. Improve configs, use @nestjs/config
