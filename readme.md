@@ -23,7 +23,7 @@ Any values specified in the `.env` file will override the values in `.env.base`
 
 ### Docs
 
-Docs will be hosted at `http://localhost:{port}/docs` after running the api
+Docs will be hosted at `http://localhost:{port}/docs` after running the api.
 They're also available at https://swift-cloud-799ab6467e8a.herokuapp.com/docs
 
 ### Running tests

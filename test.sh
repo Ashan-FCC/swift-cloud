@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Step 1: Spin up Elasticsearch container
-docker-compose -f docker-compose.test.yml up -d
+docker-compose -f docker-compose.test.yml up -d elasticsearch-test
 
 echo "Waiting for Elasticsearch to be ready..."
 until curl -s http://localhost:9300/_cluster/health | grep -q '"status":"green\|yellow"'; do
@@ -16,4 +16,4 @@ NODE_ENV=test ts-node ./src/cli.ts
 NODE_ENV=test pnpm run itest
 
 # Step 5: Tear down the Docker container
-docker-compose -f docker-compose.test.yml down -v
+docker-compose -f docker-compose.test.yml down -v elasticsearch-test

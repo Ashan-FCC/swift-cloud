@@ -49,12 +49,16 @@ function die(error: Error): Promise<void> {
 }
 
 function setupSwagger(app: INestApplication): void {
+  const server =
+    process.env.NODE_ENV === 'production'
+      ? process.env.SERVICE_HOST!
+      : `http://localhost:${process.env.PORT}`
   const options: Omit<OpenAPIObject, 'components' | 'paths'> =
     new DocumentBuilder()
       .setTitle('SwiftCloud API')
       .setVersion('1.0.0')
       .addBearerAuth()
-      .addServer(`https://swift-cloud-799ab6467e8a.herokuapp.com`)
+      .addServer(server)
       .build()
 
   const document: OpenAPIObject = SwaggerModule.createDocument(app, options)

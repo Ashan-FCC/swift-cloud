@@ -1,5 +1,5 @@
 services:
-  elasticsearch:
+  elasticsearch-test:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.16.0
     container_name: es-test-container
     environment:
@@ -24,8 +24,8 @@ services:
       start_period: 10s
       timeout: 5s
     volumes:
-      - es_data:/usr/share/elasticsearch/data
+      - es_data_test:/usr/share/elasticsearch/data
 
 volumes:
-  es_data:
+  es_data_test:
     driver: local
